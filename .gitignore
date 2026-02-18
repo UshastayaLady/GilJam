@@ -1,0 +1,22 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Package cache (иногда бывает внутри Library)
+[Ll]ibrary/[Pp]ackage[Cc]ache/
+
+# IDE/OS
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.user
+*.pidb
+*.booproj
+*.svd
+.DS_Store
+Thumbs.db
