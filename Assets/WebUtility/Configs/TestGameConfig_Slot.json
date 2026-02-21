@@ -1,0 +1,6 @@
+{
+    "typeName": "TestGameConfig",
+    "jsonData": "{\"playerName\":\"Player\",\"playerLevel\":1,\"playerHealth\":100.0,\"isActive\":true,\"spawnPosition\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"playerColor\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"_damage\":10.0,\"_coins\":0}",
+    "name": "Slot",
+    "objectReferencesJson": ""
+}
