@@ -8,9 +8,9 @@ public class RandSpawn : SpavnParent
     [SerializeField] private float maxRandTime;
     
 
-    [Header("Проверка зоны спавна")]
-    [SerializeField] private LayerMask spawnBlockMask; // слой объектов, которые нельзя пересекать
-    [SerializeField] private Vector2 extraPadding = Vector2.zero; // небольшой запас
+    [Header("РџСЂРѕРІРµСЂРєР° Р·РѕРЅС‹ СЃРїР°РІРЅР°")]
+    [SerializeField] private LayerMask spawnBlockMask; // СЃР»РѕР№ РѕР±СЉРµРєС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ РЅРµР»СЊР·СЏ РїРµСЂРµСЃРµРєР°С‚СЊ
+    [SerializeField] private Vector2 extraPadding = Vector2.zero; // РЅРµР±РѕР»СЊС€РѕР№ Р·Р°РїР°СЃ
 
     private float spawnTime;
 
@@ -44,7 +44,7 @@ public class RandSpawn : SpavnParent
         if (hit == null)
             return candidate;
 
-        Debug.LogWarning("Не найдено свободное место для спавна.");
+        Debug.LogWarning("РќРµ РЅР°Р№РґРµРЅРѕ СЃРІРѕР±РѕРґРЅРѕРµ РјРµСЃС‚Рѕ РґР»СЏ СЃРїР°РІРЅР°.");
         return spawnPoint;
     }
 

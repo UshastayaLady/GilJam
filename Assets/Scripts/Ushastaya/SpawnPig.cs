@@ -3,43 +3,29 @@ using UnityEngine;
 public class SpawnPig : SpavnParent
 {
     private Camera cam;
-    [SerializeField] private MouseHander mouseHander;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         cam = Camera.main;
     }
 
-    private void Update()
+    public void OnClick(SpriteRenderer spriteRenderer)
     {
-      //  OnClick();
-    }
+        if (spriteRenderer != spawnPrefabView)
+            return;
 
-    public void OnClick()
-    {
-        if (true)
+        Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 point = new Vector2(mouseWorld.x, mouseWorld.y);
+
+        Collider2D hit = Physics2D.OverlapPoint(point);
+
+        if (hit != null && hit.GetComponent<SpriteRenderer>() == spawnSquare)
         {
-            SpriteRenderer objOnMouse = mouseHander.GetObjectOnMouse();
-            if (objOnMouse == null)
-                return;
-
-            if (!objOnMouse.CompareTag("Player"))
-                return;
-
-            Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 point = new Vector2(mouseWorld.x, mouseWorld.y);
-
-            Collider2D hit = Physics2D.OverlapPoint(point);
-
-            if (hit != null && hit == spawnSquare)
-            {
-                spawnPoint = point;
-                SpawnObject(spawnPoint);
-            }
+            spawnPoint = point;
+            SpawnObject(spawnPoint);
         }
-             
 
-        
     }
 
 }

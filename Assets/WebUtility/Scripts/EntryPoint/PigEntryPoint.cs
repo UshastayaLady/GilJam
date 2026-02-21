@@ -10,6 +10,7 @@ public class PigEntryPoint : AbstractEntryPoint
    {
       new SDKAdapterRouter(),
       new PaymentRouter(),
+      new WallRouter(),
        new PigRouter(),
        new InventoryRouter()
    };

@@ -17,9 +17,10 @@ public class PaymentHandler
     {
         int result = Money - pigModel.CurrentPrice.Value;
 
+        Debug.LogError("RESULT,,, " + result);
         if (result > 0)
         {
-            _onBought.OnNext((result, pigModel));
+            _onBought.OnNext((pigModel.CurrentPrice.Value, pigModel));
             return true;
         }
 

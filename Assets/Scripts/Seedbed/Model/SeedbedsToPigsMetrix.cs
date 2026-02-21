@@ -1,16 +1,30 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedbedsToPigsMetrix : MonoBehaviour
+public static class SeedbedsToPigsMetrix
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private static Dictionary<(string, string), bool> _dictionary =
+        new Dictionary<(string, string), bool>()
+        {
+            { ("BrickPig", "Carrot"), false },
+            { ("StrawPig", "Carrot"), false },
+            { ("WoodcutterPig", "Carrot"), true },
+            { ("BrickPig", "Cucumber"), false },
+            { ("StrawPig", "Cucumber"), true },
+            { ("WoodcutterPig", "Cucumber"),  false},
+            { ("BrickPig", "Pepper"), true },
+            { ("StrawPig", "Pepper"), false },
+            { ("WoodcutterPig", "Pepper"),  false},
+        };
 
-    // Update is called once per frame
-    void Update()
+    public static bool IsAbleToEat(string pigType, string seedbedType)
     {
+        if (_dictionary.TryGetValue((pigType, seedbedType), out bool result))
+        {
+            return result;
+        }
         
+        Debug.LogWarning($"No entry found for pig: {pigType}, seedbed: {seedbedType}");
+        return false;
     }
 }

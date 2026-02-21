@@ -9,6 +9,7 @@ public class InventoryPresenter : IPresenter, IDisposable
     [Inject] private DIContainer _container;
     [Inject] private InventoryWindow _window;
     [Inject] private PigCollection _pigCollection;
+    [Inject] private MoneyModel _moneyModel;
     [Inject] private PaymentHandler _paymentHandler;
 
     private readonly CompositeDisposable _disposables = new CompositeDisposable();
@@ -34,6 +35,8 @@ public class InventoryPresenter : IPresenter, IDisposable
                 Update();
             })
             .AddTo(_disposables);
+
+        _moneyModel.CurrentMoney.Subscribe(_ => { _window.DisplayMoney(_moneyModel.CurrentMoney.Value);});
     }
 
     private void SubscribeToSlot(SlotView slotView, PigModel pigModel)
