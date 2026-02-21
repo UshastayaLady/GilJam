@@ -15,12 +15,6 @@ MonoBehaviour:
   m_GroupName: UnityObjects
   m_GUID: c383595d4afc2734c90d9f38db5ffe33
   m_SerializeEntries:
-  - m_GUID: 597f6aa56c1edb54d94370efc8ee4098
-    m_Address: Pig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UnityObject
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5f7f5cda588254a7c987f747cbba8b0e
     m_Address: hand-1
     m_ReadOnly: 0

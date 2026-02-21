@@ -11,6 +11,7 @@ public class PigEntryPoint : AbstractEntryPoint
       new SDKAdapterRouter(),
       new PaymentRouter(),
       new WallRouter(),
+      new SeedbedRouter(),
        new PigRouter(),
        new InventoryRouter()
    };

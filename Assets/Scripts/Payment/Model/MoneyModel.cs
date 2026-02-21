@@ -11,4 +11,9 @@ public class MoneyModel
     {
         _money.Value -= money;
     }
+
+    public void IncreaseMoney(int money)
+    {
+        _money.Value += money;
+    }
 }

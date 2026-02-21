@@ -19,6 +19,39 @@ public class PaymentPresenter : IPresenter
             })
             .AddTo(_disposables); 
 
+        Observable.EveryUpdate()
+            .Subscribe(_ =>
+            {
+                Update();
+            })
+            .AddTo(_disposables);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
+
+            foreach (var hit in hits)
+            {
+                if (hit.collider != null)
+                {
+                    // Получаем компонент с объекта
+                    PickableMoney component = hit.collider.GetComponent<PickableMoney>();
+                
+                    if (component != null)
+                    {
+                        _moneyModel.IncreaseMoney(10);
+                        
+                        Object.Destroy(component.gameObject);
+                    }
+                }
+            }
+           
+        }
+
     }
 
     private void Buy(int result, PigModel pigModel)

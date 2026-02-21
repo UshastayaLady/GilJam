@@ -1,18 +1,21 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using BehaviourTree;
 using UnityEngine;
 
 public class PigBehaviour
 {
-    [SerializeField] private Transform[] _walls;
-    [SerializeField] private Transform[] _seedbeds;
+     private Func<List<WallView>> _walls;
+    private Func<List<SeedbedView>> _seedbeds;
+    private Action<PigView, SeedbedView> _action;
     
     private readonly BehaviorTree _behaviorTree;
 
     private readonly float _rayDistance;
     private readonly float _offsetX;
 
-    public PigBehaviour(Transform selfTransform, float rayDistance = 5f, float offsetX =1f)
+    public PigBehaviour(Transform selfTransform, Func<List<WallView>> getWalls, Func<List<SeedbedView>> getSeedbeds, Action<PigView, SeedbedView> action, float rayDistance = 5f, float offsetX =1f)
     {
         Sequence findWall = new Sequence(new List<Node>
         {
@@ -30,7 +33,10 @@ public class PigBehaviour
         {
             new ActionNode(Move)
         });
-                
+
+        _walls = getWalls;
+        _seedbeds = getSeedbeds;
+        
         _behaviorTree = new BehaviorTree(
             new Selector(new List<Node>
             {
@@ -42,7 +48,7 @@ public class PigBehaviour
 
         _rayDistance = rayDistance;
         _offsetX = offsetX;
-        
+        _action = action;
         _behaviorTree.Blackboard.SetValue("selfTransform", selfTransform);   
     }
     
@@ -60,6 +66,8 @@ public class PigBehaviour
                 if (hit.collider.TryGetComponent(out SeedbedView seedbedView))
                 {
                     Debug.LogError("ATTACK SEEDBED VIEW");
+
+                    _action?.Invoke(selfTransform.GetComponent<PigView>(), seedbedView);
                 }
             }
         
@@ -70,11 +78,9 @@ public class PigBehaviour
 
         private bool IsFoundWall(Blackboard arg)
         {
-            return false;
-
             Transform selfTransform = arg.GetValue<Transform>("selfTransform");
 
-            foreach (Transform wall in _walls)
+            foreach (Transform wall in _walls().Select(x=>x.gameObject.transform))
             {
                 if (wall == null) continue;
         
@@ -89,11 +95,9 @@ public class PigBehaviour
         
         private bool IsFoundSeedbed(Blackboard arg)
         {
-            return false;
-
             Transform selfTransform = arg.GetValue<Transform>("selfTransform");
 
-            foreach (Transform seedbed in _seedbeds)
+            foreach (Transform seedbed in _seedbeds().Select(x=>x.gameObject.transform))
             {
                 if (seedbed == null) continue;
         
@@ -116,7 +120,7 @@ public class PigBehaviour
 
         private ENodeState NoAction(Blackboard arg)
         {
-            return ENodeState.Failure;
+            return ENodeState.Running;
         }
 
         private bool _isOnCooldown = false;

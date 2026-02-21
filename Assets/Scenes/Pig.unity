@@ -850,10 +850,12 @@ MonoBehaviour:
   spawnPrefabView: {fileID: 7283022130322219335, guid: 059e1bac04626cb4295577b40b2018a9, type: 3}
   minRandTime: 2
   maxRandTime: 5
+  countStart: 4
   spawnBlockMask:
     serializedVersion: 2
     m_Bits: 0
   extraPadding: {x: 0, y: 0}
+  maxFindAttempts: 20
 --- !u!114 &1214830360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,6 +1295,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2004442853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004442855}
+  - component: {fileID: 2004442854}
+  m_Layer: 0
+  m_Name: PigWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2004442854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004442853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffd6c0d956a3a44e8433ba3020914e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PigWindow
+  _pickableMoney: {fileID: 8803222134112189174, guid: f5f537bef81935a45abc0f3ab6e5bd81, type: 3}
+--- !u!4 &2004442855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004442853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 100, y: 408, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004989180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1675,7 @@ SceneRoots:
   - {fileID: 448659836}
   - {fileID: 2118420892}
   - {fileID: 2004989182}
+  - {fileID: 2004442855}
   - {fileID: 1798965326}
   - {fileID: 1867798704}
   - {fileID: 1214830358}

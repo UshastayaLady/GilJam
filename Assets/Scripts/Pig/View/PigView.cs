@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class PigView : MonoBehaviour
 {
-    
+    public string Name;
 }

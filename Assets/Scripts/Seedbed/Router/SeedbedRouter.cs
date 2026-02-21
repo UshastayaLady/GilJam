@@ -9,6 +9,7 @@ public class SeedbedRouter : IDIRouter
     public List<IPresenter> Init()
     {
         SeedbedPresenter seedbedPresenter = _container.RegisterSingleton<SeedbedPresenter>();
+        _container.RegisterSingleton<SeedbedsCollection>();
 
         return new List<IPresenter>()
         {
