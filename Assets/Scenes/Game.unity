@@ -153,7 +153,7 @@ MonoBehaviour:
   spawnPrefabView: {fileID: 655605199343816730, guid: 8d589af0f071b294c9e1ec631321f7c6, type: 3}
   minRandTime: 2
   maxRandTime: 5
-  countStart: 0
+  countStart: 7
   spawnBlockMask:
     serializedVersion: 2
     m_Bits: 64
@@ -449,8 +449,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1459762858}
   - component: {fileID: 1459762857}
-  - component: {fileID: 1459762860}
-  - component: {fileID: 1459762859}
   m_Layer: 0
   m_Name: "\u0433\u0440\u044F\u0434\u043A\u0430 (2)_0"
   m_TagString: Untagged
@@ -532,42 +530,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1459762859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459762856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c2ec30a638cbb48a026f14e6eba591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RandSpawn
-  spawnSquare: {fileID: 1459762857}
-  spawnPrefabView: {fileID: 0}
-  minRandTime: 2
-  maxRandTime: 5
-  countStart: 5
-  spawnBlockMask:
-    serializedVersion: 2
-    m_Bits: 0
-  extraPadding: {x: 0, y: 0}
-  maxFindAttempts: 20
---- !u!114 &1459762860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459762856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4ccab25680e91448f377ae66daebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PoolObjects
-  obgectForPool: {fileID: 0}
-  countObgects: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
