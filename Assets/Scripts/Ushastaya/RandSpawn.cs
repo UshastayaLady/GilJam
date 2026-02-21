@@ -6,46 +6,76 @@ public class RandSpawn : SpavnParent
 
     [SerializeField] private float minRandTime;
     [SerializeField] private float maxRandTime;
-    
+    [SerializeField] private int countStart;
 
     [Header("Проверка зоны спавна")]
     [SerializeField] private LayerMask spawnBlockMask; // слой объектов, которые нельзя пересекать
     [SerializeField] private Vector2 extraPadding = Vector2.zero; // небольшой запас
+    [SerializeField] private int maxFindAttempts = 20;
 
     private float spawnTime;
 
     private void Start()
     {
+        StartSpawn();
         StartCoroutine(RandSpawnLoop());
     }
 
-    private Vector2 RandVector()
+    private void StartSpawn()
+    {
+        for (int i = 0; i < countStart; i++)
+        {
+            if (TryGetRandomSpawnPoint(out Vector2 point))
+            {
+                SpawnObject(point);
+            }
+            else
+            {
+                Debug.LogWarning($"Стартовый спавн остановлен: нет свободного места (i={i}).");
+                break;
+            }
+        }
+    }
+
+    private bool TryGetRandomSpawnPoint(out Vector2 result)
     {
         Vector3 squarePos = spawnSquare.transform.position;
-        Vector3 squareScale = spawnSquare.transform.localScale;
-        
+
+        Vector2 squareSize = spawnSquare.bounds.size;
         Vector2 prefabSize = spawnPrefabView.bounds.size;
 
-        float minX = squarePos.x - squareScale.x / 2f + prefabSize.x / 2f;
-        float maxX = squarePos.x + squareScale.x / 2f - prefabSize.x / 2f;
-        float minY = squarePos.y - squareScale.y / 2f + prefabSize.y / 2f;
-        float maxY = squarePos.y + squareScale.y / 2f - prefabSize.y / 2f;
+        float minX = squarePos.x - squareSize.x / 2f + prefabSize.x / 2f;
+        float maxX = squarePos.x + squareSize.x / 2f - prefabSize.x / 2f;
+        float minY = squarePos.y - squareSize.y / 2f + prefabSize.y / 2f;
+        float maxY = squarePos.y + squareSize.y / 2f - prefabSize.y / 2f;
+
+        if (minX > maxX || minY > maxY)
+        {
+            Debug.LogWarning("Зона спавна слишком маленькая для объекта.");
+            result = Vector2.zero;
+            return false;
+        }
 
         Vector2 checkSize = prefabSize + extraPadding;
 
-        Vector2 candidate = new Vector2(
+        for (int attempt = 0; attempt < maxFindAttempts; attempt++)
+        {
+            Vector2 candidate = new Vector2(
                 Random.Range(minX, maxX),
                 Random.Range(minY, maxY)
             );
 
-        
-        Collider2D hit = Physics2D.OverlapBox(candidate, checkSize, 0f, spawnBlockMask);
+            Collider2D hit = Physics2D.OverlapBox(candidate, checkSize, 0f, spawnBlockMask);
 
-        if (hit == null)
-            return candidate;
+            if (hit == null)
+            {
+                result = candidate;
+                return true;
+            }
+        }
 
-        Debug.LogWarning("Не найдено свободное место для спавна.");
-        return spawnPoint;
+        result = Vector2.zero;
+        return false;
     }
 
     private IEnumerator RandSpawnLoop()
@@ -53,11 +83,17 @@ public class RandSpawn : SpavnParent
         while (true)
         {
             spawnTime = Random.Range(minRandTime, maxRandTime);
-
-            spawnPoint = RandVector();
-            SpawnObject(spawnPoint);
-
             yield return new WaitForSeconds(spawnTime);
+
+            if (TryGetRandomSpawnPoint(out Vector2 point))
+            {
+                SpawnObject(point);
+            }
+            else
+            {
+                Debug.LogWarning("Не найдено свободное место для спавна.");
+            }
         }
     }
+
 }
