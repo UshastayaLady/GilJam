@@ -1,4 +1,5 @@
 Assets/Scenes/Angel.unity
+Assets/Scenes/Game.unity
 Assets/Scenes/Pig.unity
 Assets/WebUtility/Scenes/Level.unity
 Assets/WebUtility/Scenes/New Scene.unity

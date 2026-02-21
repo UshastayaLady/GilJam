@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4277865063014866283}
   - component: {fileID: 7283022130322219335}
-  - component: {fileID: 2082257878288103172}
   - component: {fileID: 509983438708498818}
   m_Layer: 0
   m_Name: Seedbed
@@ -93,19 +92,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2082257878288103172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296954100329580328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1208a51308f4161488a40d7cd176f1eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SeedbedView
-  Name: StrawPig
 --- !u!61 &509983438708498818
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class PigBehaviour
     private readonly float _rayDistance;
     private readonly float _offsetX;
 
-    public PigBehaviour(Transform selfTransform, Func<List<WallView>> getWalls, Func<List<SeedbedView>> getSeedbeds, Action<PigView, SeedbedView> action, float rayDistance = 15f, float offsetX =1f)
+    public PigBehaviour(Transform selfTransform, Func<List<WallView>> getWalls, Func<List<SeedbedView>> getSeedbeds, Action<PigView, SeedbedView> action, float rayDistance = 1.5f, float offsetX =1f)
     {
         Sequence findWall = new Sequence(new List<Node>
         {
