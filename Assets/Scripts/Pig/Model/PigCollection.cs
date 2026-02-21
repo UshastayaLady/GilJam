@@ -23,6 +23,7 @@ public class PigCollection
     
     public GameObject GetPrefabBy(PigModel pigModel)
     {
+        Debug.LogError("_pigModelsByInfos " + _pigModelsByInfos.Count + " " + _pigModelsByInfos[pigModel].Prefab);
         return _pigModelsByInfos[pigModel].Prefab;
     }
 

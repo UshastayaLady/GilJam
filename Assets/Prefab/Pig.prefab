@@ -104,7 +104,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e647d9fcbfdd748b72a483e5e7702d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PigView
-  _treasure: {fileID: 0}
-  _player: {fileID: 0}
-  _walls: []
-  _seedbeds: []
+  Name: StrawPig

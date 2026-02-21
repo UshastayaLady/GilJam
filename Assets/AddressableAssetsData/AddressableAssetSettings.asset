@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 803bdec641b9234418c9daf40583df98
   m_currentHash:
     serializedVersion: 2
-    Hash: aa1bc2878d93c1cd24fa4df794883778
+    Hash: ddcc5b78f278491e38fd05d81bdbf71f
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
     - UnityObject
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 171306ddf25305b4d97546d636c54142, type: 2}
   m_InitializationObjects: []
   m_CertificateHandlerType:
     m_AssemblyName: 
