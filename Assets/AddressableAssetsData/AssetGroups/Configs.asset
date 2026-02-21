@@ -21,8 +21,32 @@ MonoBehaviour:
     m_SerializedLabels:
     - Config
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d3bb120a2df4a547bc7e17b10524d17
+    m_Address: Configs/PigData_WoodcutterPig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 45cfcd18ced343b4fa102a60455d5c3a
     m_Address: Configs/PlayerPrefsSDKAdapter_PlayerPrefs
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46f3586928d550542a999cd08113d7ba
+    m_Address: Configs/SeedbedData_Cucumber
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60f18fdb05a0d574382da8faf1e04db6
+    m_Address: Configs/PigData_BrickPig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 650bf4e648d48184689da479f2c7eaf5
+    m_Address: Configs/SeedbedData_Carrot
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config
@@ -35,6 +59,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 95b5b8546e4b0b2449da7238b5e7500c
     m_Address: Configs/PigData_StrawPig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e27b5df34d7662a4fa0b3a0f84245178
+    m_Address: Configs/SeedbedData_Pepper
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config

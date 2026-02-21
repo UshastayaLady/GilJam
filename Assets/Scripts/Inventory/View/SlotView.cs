@@ -6,18 +6,27 @@ using UniRx;
 using UniRx.Triggers;
 using UnityEngine.EventSystems;
 
-public class SlotView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+public class SlotView : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    [SerializeField] private Button _button;
     [SerializeField] private Image _icon;
     [SerializeField] private TextMeshProUGUI _text;
     
     private readonly Subject<PointerEventData> _onBeginDragSubject = new Subject<PointerEventData>();
     private readonly Subject<PointerEventData> _onEndDragSubject = new Subject<PointerEventData>();
-    
-    public IObservable<Unit> OnClicked => _button.OnClickAsObservable();
+    private Image _image;
+
+    // public IObservable<Unit> OnClicked => _button.OnClickAsObservable();
     public IObservable<PointerEventData> OnBeginDragged => _onBeginDragSubject;
     public IObservable<PointerEventData> OnEndDragged => _onEndDragSubject;
+
+    private void Awake()
+    {
+        if (_image == null)
+            _image = GetComponent<Image>();
+            
+        _image.raycastTarget = true;
+
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -44,5 +53,10 @@ public class SlotView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
         _onBeginDragSubject?.Dispose();
         _onEndDragSubject?.Dispose();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        UnityEngine.Debug.LogError("CLICKED!");
     }
 }

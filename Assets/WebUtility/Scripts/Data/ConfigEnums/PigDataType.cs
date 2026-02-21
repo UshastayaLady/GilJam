@@ -5,6 +5,8 @@ namespace WebUtility.Data
 {
     public enum PigDataType
     {
-        StrawPig = 1
+        BrickPig = 1,
+        StrawPig = 2,
+        WoodcutterPig = 3
     }
 }

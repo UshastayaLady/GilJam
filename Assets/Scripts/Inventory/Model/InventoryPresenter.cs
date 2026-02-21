@@ -38,11 +38,11 @@ public class InventoryPresenter : IPresenter, IDisposable
 
     private void SubscribeToSlot(SlotView slotView, PigModel pigModel)
     {
-        slotView.OnClicked
-            .Subscribe(_ => {
-                Buy(pigModel); 
-            })
-            .AddTo(_disposables); 
+        // slotView.OnClicked
+        //     .Subscribe(_ => {
+        //         Buy(pigModel); 
+        //     })
+        //     .AddTo(_disposables); 
             
         slotView.OnBeginDragged  
             .Subscribe(_ => {
@@ -60,6 +60,8 @@ public class InventoryPresenter : IPresenter, IDisposable
 
     private void EndDrag()
     {
+        Debug.LogError("End drag!");
+
         _dragAndDropModel.Disable();
     }
 

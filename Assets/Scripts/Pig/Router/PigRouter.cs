@@ -9,11 +9,13 @@ public class PigRouter : IDIRouter
     public List<IPresenter> Init()
     {
         PigPresenter pigPresenter = _container.RegisterSingleton<PigPresenter>();
+        PigCreatorPresenter pigCreatorPresenter = _container.RegisterSingleton<PigCreatorPresenter>();
         PigCollection pigCollection = _container.RegisterSingleton<PigCollection>();
 
         return new List<IPresenter>()
         {
-            pigPresenter
+            pigPresenter,
+            pigCreatorPresenter
         };
     }
 }
