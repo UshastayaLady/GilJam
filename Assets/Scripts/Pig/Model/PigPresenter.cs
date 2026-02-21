@@ -48,6 +48,10 @@ public class PigPresenter : IPresenter
     private void Trigger(PigView arg1, SeedbedView arg2)
     {
         Debug.LogError("TRIGGER!! " + arg1 + " " + arg2);
+        
+        arg2.gameObject.SetActive(false);
+
+        return;
         if (SeedbedsToPigsMetrix.IsAbleToEat(arg1.Name, arg2.Name))
         {
             arg2.gameObject.SetActive(false);

@@ -21,12 +21,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Config
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2d3bb120a2df4a547bc7e17b10524d17
-    m_Address: Configs/PigData_WoodcutterPig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Config
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 45cfcd18ced343b4fa102a60455d5c3a
     m_Address: Configs/PlayerPrefsSDKAdapter_PlayerPrefs
     m_ReadOnly: 0
@@ -35,12 +29,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46f3586928d550542a999cd08113d7ba
     m_Address: Configs/SeedbedData_Cucumber
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Config
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 60f18fdb05a0d574382da8faf1e04db6
-    m_Address: Configs/PigData_BrickPig
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config

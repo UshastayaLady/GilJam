@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - UnityObject
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5937a6c67c33884585d53e6f3d8cd7c
+    m_Address: IMG_0346
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UnityObject
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4916921fe7000014fbb39d6d80881162, type: 2}
   m_SchemaSet:
