@@ -1,12 +1,14 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
+using UnityEngine;
 
 public class RandSpawn : SpavnParent
 {
 
     [SerializeField] private float minRandTime;
     [SerializeField] private float maxRandTime;
-    [SerializeField] private int countStart;
+    [SerializeField] private List<Vector2> objectsStart;
 
     [Header("Проверка зоны спавна")]
     [SerializeField] private LayerMask spawnBlockMask; // слой объектов, которые нельзя пересекать
@@ -23,17 +25,9 @@ public class RandSpawn : SpavnParent
 
     private void StartSpawn()
     {
-        for (int i = 0; i < countStart; i++)
+        foreach (Vector2 t in objectsStart)
         {
-            if (TryGetRandomSpawnPoint(out Vector2 point))
-            {
-                SpawnObject(point);
-            }
-            else
-            {
-                Debug.LogWarning($"Стартовый спавн остановлен: нет свободного места (i={i}).");
-                break;
-            }
+            SpawnObject(t);
         }
     }
 
