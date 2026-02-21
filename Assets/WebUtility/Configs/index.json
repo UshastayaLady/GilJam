@@ -1,0 +1,7 @@
+{
+    "configs": [
+        "PlayerPrefsSDKAdapter_PlayerPrefs",
+        "TestGameConfig_Slot",
+        "YandexSDKAdapter_Yandex"
+    ]
+}

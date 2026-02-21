@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Configs
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Configs
+  m_GUID: 2a566404b523b294bb3f628d6c99e735
+  m_SerializeEntries:
+  - m_GUID: 1af3b90d0c4e8be4b87757ea067eb5fd
+    m_Address: Configs/YandexSDKAdapter_Yandex
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45cfcd18ced343b4fa102a60455d5c3a
+    m_Address: Configs/PlayerPrefsSDKAdapter_PlayerPrefs
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 909c370fcf717274fa4b967239d87690
+    m_Address: Configs/TestGameConfig_Slot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4916921fe7000014fbb39d6d80881162, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f0e6d407daae4a544a96300fde64cec4, type: 2}
+    - {fileID: 11400000, guid: 417782e0a1434f0459dc6836e25b7bf7, type: 2}
