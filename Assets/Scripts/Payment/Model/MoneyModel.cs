@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoneyModel
 {
-    private readonly ReactiveProperty<int> _money = new ReactiveProperty<int>(100);
+    private readonly ReactiveProperty<int> _money = new ReactiveProperty<int>(1000);
 
     public IReadOnlyReactiveProperty<int> CurrentMoney => _money;
 

@@ -17,26 +17,31 @@ public class SpawnPig : SpavnParent
 
     public void OnClick()
     {
-        if (true)
+        Debug.LogError("ONCLICKEKa,,ra. ");
+        SpriteRenderer objOnMouse = mouseHander.GetObjectOnMouse();
+        Debug.LogError("Fkakf,ac");
+        // if (objOnMouse == null)
+        //     return;
+        Debug.LogError("axxac,ac");
+
+        // if (!objOnMouse.CompareTag("Player"))
+        //     return;
+
+        Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 point = new Vector2(mouseWorld.x, mouseWorld.y);
+
+        Collider2D hit = Physics2D.OverlapPoint(point);
+        Debug.LogError("2233,ac" + hit.GetComponent<SpriteRenderer>() + " " + spawnSquare);
+
+        if (hit != null && hit.GetComponent<SpriteRenderer>() == spawnSquare)
         {
-            SpriteRenderer objOnMouse = mouseHander.GetObjectOnMouse();
-            if (objOnMouse == null)
-                return;
+            Debug.LogError("65252,ac");
 
-            if (!objOnMouse.CompareTag("Player"))
-                return;
-
-            Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 point = new Vector2(mouseWorld.x, mouseWorld.y);
-
-            Collider2D hit = Physics2D.OverlapPoint(point);
-
-            if (hit != null && hit == spawnSquare)
-            {
-                spawnPoint = point;
-                SpawnObject(spawnPoint);
-            }
+            spawnPoint = point;
+            SpawnObject(spawnPoint);
         }
+
+
              
 
         
