@@ -9,7 +9,7 @@ public class WallPresenter : IPresenter
 
     public void Init()
     {
-        
+        _wallsCollection.AddWall(Object.FindObjectOfType<WallView>());
     }
 
     public void Exit()
