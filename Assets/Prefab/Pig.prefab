@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2510879582013602201}
   - component: {fileID: 251118772882036920}
   - component: {fileID: 4232521862028449291}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,3 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e647d9fcbfdd748b72a483e5e7702d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PigView
+  _treasure: {fileID: 0}
+  _player: {fileID: 0}
+  _walls: []
+  _seedbeds: []
