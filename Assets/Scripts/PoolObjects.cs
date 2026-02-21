@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PoolObjects : MonoBehaviour
@@ -29,20 +28,20 @@ public class PoolObjects : MonoBehaviour
     {
         for (int i = 0; i < poolObgect.Count; i++)
         {
-            poolObgect[i].GameObject().SetActive(false);
+            poolObgect[i].gameObject.SetActive(false);
         }
     }
     private void AddPoolObjects()
     {
         poolObgect.Add(Instantiate(obgectForPool, pointSpawn, Quaternion.identity));
-        poolObgect[poolObgect.Count - 1].GameObject().SetActive(false);
+        poolObgect[poolObgect.Count - 1].gameObject.SetActive(false);
     }
 
     public SpriteRenderer GetObjectInPool()
     {
         for (int i = 0; i < poolObgect.Count; i++)
         {
-            if (!poolObgect[i].GameObject().activeSelf)
+            if (!poolObgect[i].gameObject.activeSelf)
             {
                 return poolObgect[i];
             }
