@@ -70,6 +70,8 @@ public class PigBehaviour
 
         private bool IsFoundWall(Blackboard arg)
         {
+            return false;
+
             Transform selfTransform = arg.GetValue<Transform>("selfTransform");
 
             foreach (Transform wall in _walls)
@@ -87,6 +89,8 @@ public class PigBehaviour
         
         private bool IsFoundSeedbed(Blackboard arg)
         {
+            return false;
+
             Transform selfTransform = arg.GetValue<Transform>("selfTransform");
 
             foreach (Transform seedbed in _seedbeds)
@@ -118,7 +122,7 @@ public class PigBehaviour
         private bool _isOnCooldown = false;
 
 
-        private void Update()
+        public void Update()
         {
             _behaviorTree.Tick();
         }

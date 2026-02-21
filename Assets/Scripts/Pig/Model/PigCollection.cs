@@ -1,10 +1,16 @@
+using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 public class PigCollection
 {
     private readonly Dictionary<PigModel, PigInfo> _pigModelsByInfos = new();
     
+    private readonly Subject<(PigView, PigModel)> _onSpawned = new Subject<(PigView, PigModel)>();
+    
+    public IObservable<(PigView, PigModel)> OnSpawned => _onSpawned;
+
     public void AddPig(PigModel pigModel, PigInfo pigInfo)
     {
         _pigModelsByInfos.Add(pigModel, pigInfo);
@@ -23,6 +29,11 @@ public class PigCollection
     public IEnumerable<PigModel> GetPigs()
     {
         return _pigModelsByInfos.Keys;
+    }
+
+    public void UpdateSpawnedPig(PigView spawnedPig, PigModel pigModel)
+    {
+        _onSpawned?.OnNext((spawnedPig, pigModel));
     }
 }
 

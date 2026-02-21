@@ -10,11 +10,13 @@ public class SpawnPig : SpavnParent
         cam = Camera.main;
     }
 
-    public void OnClick(SpriteRenderer spriteRenderer)
+    public void OnClick(SpriteRenderer spriteRenderer, out SpriteRenderer created)
     {
+        created = null;
+        
         if (spriteRenderer != spawnPrefabView)
             return;
-
+        
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 point = new Vector2(mouseWorld.x, mouseWorld.y);
 
@@ -24,6 +26,8 @@ public class SpawnPig : SpavnParent
         {
             spawnPoint = point;
             SpawnObject(spawnPoint);
+
+            created = spawnObject;
         }
 
     }

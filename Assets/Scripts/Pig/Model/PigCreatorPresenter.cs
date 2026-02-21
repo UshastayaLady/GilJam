@@ -25,7 +25,12 @@ public class PigCreatorPresenter : IPresenter
     {
         Debug.LogError("CLICKEDQ!");
 
-        Object.FindObjectOfType<SpawnPig>(true).OnClick(_pigCollection.GetPrefabBy(pigModel).GetComponent<SpriteRenderer>());
+        Object.FindObjectOfType<SpawnPig>(true).OnClick(_pigCollection.GetPrefabBy(pigModel).GetComponent<SpriteRenderer>(), out SpriteRenderer spawnedPig);
+
+        if (spawnedPig != null)
+        {
+            _pigCollection.UpdateSpawnedPig(spawnedPig.GetComponent<PigView>(), pigModel);
+        }
     }
 
     public void Exit()

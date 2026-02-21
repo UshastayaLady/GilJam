@@ -7,7 +7,7 @@ public class SpavnParent : MonoBehaviour
     [SerializeField] protected SpriteRenderer spawnSquare;
     [SerializeField] protected SpriteRenderer spawnPrefabView;
     protected Vector2 spawnPoint;
-    private SpriteRenderer spawnObject;
+    protected SpriteRenderer spawnObject;
     private PoolObjects poolObjects;
 
     protected virtual void Awake()
