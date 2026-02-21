@@ -24,7 +24,7 @@ public class PigCreatorPresenter : IPresenter
     {
         Debug.LogError("CLICKEDQ!");
 
-        Object.FindObjectOfType<SpawnPig>(true).OnClick();
+       // Object.FindObjectOfType<SpawnPig>(true).OnClick();
     }
 
     public void Exit()
