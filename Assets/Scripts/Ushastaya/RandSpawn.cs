@@ -6,7 +6,7 @@ public class RandSpawn : SpavnParent
 
     [SerializeField] private float minRandTime;
     [SerializeField] private float maxRandTime;
-    [SerializeField] private SpriteRenderer spawnPrefabView;
+    
 
     [Header("Проверка зоны спавна")]
     [SerializeField] private LayerMask spawnBlockMask; // слой объектов, которые нельзя пересекать
