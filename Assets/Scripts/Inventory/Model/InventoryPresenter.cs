@@ -1,46 +1,89 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx; 
 using WebUtility; 
 
-public class InventoryPresenter : IPresenter
+public class InventoryPresenter : IPresenter, IDisposable
 {
     [Inject] private DIContainer _container;
     [Inject] private InventoryWindow _window;
-    
-    private readonly CompositeDisposable _disposables = new CompositeDisposable(); 
+    [Inject] private PigCollection _pigCollection;
+    [Inject] private PaymentHandler _paymentHandler;
+
+    private readonly CompositeDisposable _disposables = new CompositeDisposable();
+
+    private DragAndDropModel _dragAndDropModel;
 
     public void Init()
     {
-        foreach (var pigModel in GetPigs())
+        _dragAndDropModel = new DragAndDropModel(_window.MouseIcon);
+        
+        foreach (var pigModel in _pigCollection.GetPigs())
         {
             SlotView slotView = _window.Create();
             slotView.UpdatePrice(pigModel.CurrentPrice.Value);
+            slotView.UpdateIcon(_pigCollection.GetSpriteBy(pigModel));
             
-            slotView.OnClicked
-                .Subscribe(_ => {
-                    Buy(pigModel); 
-                })
-                .AddTo(_disposables); 
+            SubscribeToSlot(slotView, pigModel);
         }
+        
+        Observable.EveryUpdate()
+            .Subscribe(_ =>
+            {
+                Update();
+            })
+            .AddTo(_disposables);
+    }
+
+    private void SubscribeToSlot(SlotView slotView, PigModel pigModel)
+    {
+        slotView.OnClicked
+            .Subscribe(_ => {
+                Buy(pigModel); 
+            })
+            .AddTo(_disposables); 
+            
+        slotView.OnBeginDragged  
+            .Subscribe(_ => {
+                BeginDrag(pigModel); 
+            })
+            .AddTo(_disposables); 
+            
+        slotView.OnEndDragged  
+            .Subscribe(_ => {
+                EndDrag();
+                Buy(pigModel);
+            })
+            .AddTo(_disposables); 
+    }
+
+    private void EndDrag()
+    {
+        _dragAndDropModel.Disable();
+    }
+
+    private void BeginDrag(PigModel pigModel)
+    {
+        Debug.LogError("DRAG!");
+        _dragAndDropModel.Activate(_pigCollection.GetSpriteBy(pigModel));
     }
 
     private void Buy(PigModel pigModel) 
     {
         Debug.Log($"Покупка свинки за {pigModel.CurrentPrice.Value}");
+
+        _paymentHandler.TryBuy(pigModel);
     }
 
-    private IEnumerable<PigModel> GetPigs()
+    private void Update()
     {
-        return new List<PigModel>()
-        {
-            new PigModel(100, 10),
-            new PigModel(100, 20)
-        };
+        _dragAndDropModel.Update();
     }
 
-    public void Exit()
+    public void Dispose()
     {
         _disposables.Clear(); 
+        _disposables?.Dispose();
     }
 }

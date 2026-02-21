@@ -9,6 +9,7 @@ public class PigEntryPoint : AbstractEntryPoint
    protected override List<IDIRouter> Routers => new List<IDIRouter>()
    {
       new SDKAdapterRouter(),
+      new PaymentRouter(),
        new PigRouter(),
        new InventoryRouter()
    };

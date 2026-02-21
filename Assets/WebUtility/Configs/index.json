@@ -1,5 +1,6 @@
 {
     "configs": [
+        "PigData_StrawPig",
         "PlayerPrefsSDKAdapter_PlayerPrefs",
         "TestGameConfig_Slot",
         "YandexSDKAdapter_Yandex"
