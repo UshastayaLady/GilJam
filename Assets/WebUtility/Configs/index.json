@@ -1,0 +1,13 @@
+{
+    "configs": [
+        "PigData_BrickPig",
+        "PigData_StrawPig",
+        "PigData_WoodcutterPig",
+        "PlayerPrefsSDKAdapter_PlayerPrefs",
+        "SeedbedData_Carrot",
+        "SeedbedData_Cucumber",
+        "SeedbedData_Pepper",
+        "TestGameConfig_Slot",
+        "YandexSDKAdapter_Yandex"
+    ]
+}
