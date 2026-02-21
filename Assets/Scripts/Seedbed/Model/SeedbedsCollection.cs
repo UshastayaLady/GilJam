@@ -7,6 +7,6 @@ public class SeedbedsCollection
     
     public IEnumerable<SeedbedView> GetSeedbeds()
     {
-        return _seedbeds;
+        return Object.FindObjectsOfType<SeedbedView>();
     }
 }

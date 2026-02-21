@@ -15,7 +15,7 @@ public class PigBehaviour
     private readonly float _rayDistance;
     private readonly float _offsetX;
 
-    public PigBehaviour(Transform selfTransform, Func<List<WallView>> getWalls, Func<List<SeedbedView>> getSeedbeds, Action<PigView, SeedbedView> action, float rayDistance = 5f, float offsetX =1f)
+    public PigBehaviour(Transform selfTransform, Func<List<WallView>> getWalls, Func<List<SeedbedView>> getSeedbeds, Action<PigView, SeedbedView> action, float rayDistance = 15f, float offsetX =1f)
     {
         Sequence findWall = new Sequence(new List<Node>
         {
@@ -52,29 +52,29 @@ public class PigBehaviour
         _behaviorTree.Blackboard.SetValue("selfTransform", selfTransform);   
     }
     
-      private ENodeState AttackSeedbed(Blackboard arg)
+    private ENodeState AttackSeedbed(Blackboard arg)
+    {
+        Transform selfTransform = arg.GetValue<Transform>("selfTransform");
+
+        Vector2 origin = new Vector2(selfTransform.position.x - _offsetX, selfTransform.position.y);
+        Vector2 direction = Vector2.right;
+        
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, _rayDistance);
+
+        foreach (var hit in hits)
         {
-            Transform selfTransform = arg.GetValue<Transform>("selfTransform");
-
-            Vector2 origin = new Vector2(selfTransform.position.x + _offsetX, selfTransform.position.y);
-            Vector2 direction = Vector2.right;
-        
-            RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, _rayDistance);
-
-            foreach (var hit in hits)
+            if (hit.collider.TryGetComponent(out SeedbedView seedbedView))
             {
-                if (hit.collider.TryGetComponent(out SeedbedView seedbedView))
-                {
-                    Debug.LogError("ATTACK SEEDBED VIEW");
+                Debug.LogError("ATTACK SEEDBED VIEW");
 
-                    _action?.Invoke(selfTransform.GetComponent<PigView>(), seedbedView);
-                }
+                _action?.Invoke(selfTransform.GetComponent<PigView>(), seedbedView);
             }
-        
-            Debug.DrawRay(origin, direction * _rayDistance, Color.green);
-
-            return ENodeState.Running;
         }
+        
+        Debug.DrawRay(origin, direction * _rayDistance, Color.green);
+
+        return ENodeState.Running;
+    }
 
         private bool IsFoundWall(Blackboard arg)
         {
