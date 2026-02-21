@@ -1,6 +1,6 @@
 {
     "typeName": "SeedbedData",
-    "jsonData": "{\"Prefab\":{\"instanceID\":0}}",
+    "jsonData": "{\"Name\":\"Carrot\",\"Prefab\":{\"instanceID\":0}}",
     "name": "Carrot",
     "objectReferencesJson": ""
 }

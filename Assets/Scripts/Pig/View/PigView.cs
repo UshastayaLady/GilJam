@@ -10,6 +10,9 @@ public class PigView : MonoBehaviour
         [SerializeField] private Transform[] _walls;
         [SerializeField] private Transform[] _seedbeds;
 
+        public float rayDistance = 5f;
+        public float offsetX = 1f;
+
         private BehaviorTree _behaviorTree;
 
         private void Awake()
@@ -50,7 +53,23 @@ public class PigView : MonoBehaviour
 
         private ENodeState AttackSeedbed(Blackboard arg)
         {
-            
+            Transform selfTransform = arg.GetValue<Transform>("selfTransform");
+
+            Vector2 origin = new Vector2(selfTransform.position.x + offsetX, selfTransform.position.y);
+            Vector2 direction = Vector2.right;
+        
+            RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, rayDistance);
+
+            foreach (var hit in hits)
+            {
+                if (hit.collider.TryGetComponent(out SeedbedView seedbedView))
+                {
+                    Debug.LogError("ATTACK SEEDBED VIEW");
+                }
+            }
+        
+            Debug.DrawRay(origin, direction * rayDistance, Color.green);
+
             return ENodeState.Running;
         }
 
