@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "F:\\Projects\\GilJam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|f:\\projects\\giljam\\assets\\scripts\\ushastaya\\poolobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ushastaya\\poolobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|f:\\projects\\giljam\\assets\\scripts\\ushastaya\\next.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ushastaya\\next.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|f:\\projects\\giljam\\assets\\scripts\\ushastaya\\randspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ushastaya\\randspawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|F:\\Projects\\GilJam\\assets\\scripts\\ushastaya\\poolobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{564AA444-9E43-3D65-EB3F-EBA054884E3A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ushastaya\\poolobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Next.cs",
+              "DocumentMoniker": "F:\\Projects\\GilJam\\Assets\\Scripts\\Ushastaya\\Next.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ushastaya\\Next.cs",
+              "ToolTip": "F:\\Projects\\GilJam\\Assets\\Scripts\\Ushastaya\\Next.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ushastaya\\Next.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T15:04:28.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PoolObjects.cs",
               "DocumentMoniker": "F:\\Projects\\GilJam\\Assets\\Scripts\\Ushastaya\\PoolObjects.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ushastaya\\PoolObjects.cs",
@@ -30,8 +47,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Ushastaya\\PoolObjects.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwBoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T14:19:43.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-21T14:19:43.781Z"
             },
             {
               "$type": "Document",
@@ -41,7 +57,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ushastaya\\RandSpawn.cs",
               "ToolTip": "F:\\Projects\\GilJam\\Assets\\Scripts\\Ushastaya\\RandSpawn.cs",
               "RelativeToolTip": "Assets\\Scripts\\Ushastaya\\RandSpawn.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAYwGMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAwwFMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-21T13:48:13.116Z",
               "EditorCaption": ""
