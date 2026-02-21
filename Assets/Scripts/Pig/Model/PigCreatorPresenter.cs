@@ -7,6 +7,7 @@ public class PigCreatorPresenter : IPresenter
     [Inject] private DIContainer _container;
     [Inject] private PigWindow _window;
     [Inject] private PaymentHandler _paymentHandler;
+    [Inject] private PigCollection _pigCollection;
     
     private readonly CompositeDisposable _disposables = new CompositeDisposable();
 
@@ -24,7 +25,7 @@ public class PigCreatorPresenter : IPresenter
     {
         Debug.LogError("CLICKEDQ!");
 
-       // Object.FindObjectOfType<SpawnPig>(true).OnClick();
+        Object.FindObjectOfType<SpawnPig>(true).OnClick(_pigCollection.GetPrefabBy(pigModel).GetComponent<SpriteRenderer>());
     }
 
     public void Exit()

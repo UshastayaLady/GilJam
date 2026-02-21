@@ -847,9 +847,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandSpawn
   spawnSquare: {fileID: 984182303}
+  spawnPrefabView: {fileID: 7283022130322219335, guid: 059e1bac04626cb4295577b40b2018a9, type: 3}
   minRandTime: 2
   maxRandTime: 5
-  spawnPrefabView: {fileID: 7283022130322219335, guid: 059e1bac04626cb4295577b40b2018a9, type: 3}
   spawnBlockMask:
     serializedVersion: 2
     m_Bits: 0
@@ -956,7 +956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247295118}
   - component: {fileID: 1247295117}
-  - component: {fileID: 1247295116}
+  - component: {fileID: 1247295119}
   m_Layer: 0
   m_Name: SpawnPig
   m_TagString: Untagged
@@ -964,20 +964,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1247295116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247295115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9b971d09fede14fa0c55884f432274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnPig
-  spawnSquare: {fileID: 514961390}
-  mouseHander: {fileID: 1878385333}
 --- !u!114 &1247295117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,6 +994,20 @@ Transform:
   - {fileID: 514961389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247295119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247295115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9b971d09fede14fa0c55884f432274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPig
+  spawnSquare: {fileID: 514961390}
+  spawnPrefabView: {fileID: 251118772882036920, guid: 597f6aa56c1edb54d94370efc8ee4098, type: 3}
 --- !u!1 &1289537704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pig
       objectReference: {fileID: 0}
+    - target: {fileID: 2351595051452110576, guid: 597f6aa56c1edb54d94370efc8ee4098, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2510879582013602201, guid: 597f6aa56c1edb54d94370efc8ee4098, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.26
@@ -1319,6 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryWindow
   _prefab: {fileID: 1647124816806755316, guid: 9920e3cb0558ea443b03ce291ceffa95, type: 3}
+  _displayCountView: {fileID: 1289537709}
   _parent: {fileID: 1228357819}
   _mouseIcon: {fileID: 849192875}
 --- !u!4 &2004989182
@@ -1346,8 +1351,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2074716769}
   - component: {fileID: 2074716768}
+  - component: {fileID: 2074716770}
   m_Layer: 0
-  m_Name: Square
+  m_Name: WallView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1427,6 +1433,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074716770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074716767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c084520d585349d42ae19da046f229a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallView
 --- !u!1 &2081827064
 GameObject:
   m_ObjectHideFlags: 0
